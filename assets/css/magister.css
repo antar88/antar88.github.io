@@ -369,5 +369,13 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 	color: inherit;
 }
 
+.large-thumbnail {
+	min-height: 615px;
+}
+
+.small-thumbnail {
+	min-height: 470px;
+}
+
 
 
