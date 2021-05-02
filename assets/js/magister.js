@@ -1,4 +1,4 @@
-// global. currently active menu item 
+// global. currently active menu item
 var current_item = 0;
 
 // few settings
@@ -10,15 +10,15 @@ jQuery(document).ready(function($) {
 
 	// Switch section
 	$("a", '.mainmenu').click(swithcSection);
-	$("#about-button").click(swithcSection);		
-
-	function swithcSection() 
+	$("#about-button").click(swithcSection);
+	$("#portfolio-button").click(swithcSection);		
+	function swithcSection()
 	{
-		if( ! $(this).hasClass('active') ) { 
+		if( ! $(this).hasClass('active') ) {
 			current_item = this;
 			// close all visible divs with the class of .section
-			$('.section:visible').fadeOut( section_hide_time, function() { 
-				$('a', '.mainmenu').removeClass( 'active' );  
+			$('.section:visible').fadeOut( section_hide_time, function() {
+				$('a', '.mainmenu').removeClass( 'active' );
 				$(current_item).addClass( 'active' );
 				var new_section = $( $(current_item).attr('href') );
 				new_section.fadeIn( section_show_time );
