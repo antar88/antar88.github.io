@@ -598,6 +598,17 @@ button:focus {
     font-weight: 600;
 }
 
+.img-circle {
+    border-radius: 50%;
+    width: 240px;
+    height: 240px;
+    margin-bottom: 32px;
+}
+
+#signature {
+    margin-bottom: -20px;
+}
+
 .about-detail .about-work li::after {
     content: "";
     height: 3px;
