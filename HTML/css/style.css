@@ -938,6 +938,9 @@ button:focus {
     left: -100%;
 }
 
+img.cv_company_logo {
+    height: 60px;
+}
 
 /*==========================
         11.CLIENT
