@@ -128,6 +128,15 @@
                 preload: [0, 1]
             }
         });
+
+        $('#cake').magnificPopup({
+            disableOn: 700,
+            type: 'image',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+        });
     },
 
     //ClientSlider
