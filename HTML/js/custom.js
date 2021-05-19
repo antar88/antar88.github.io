@@ -137,6 +137,14 @@
             preloader: false,
             fixedContentPos: false
         });
+
+        // Inline popups
+        $('.open-popup-link').magnificPopup({
+            type:'inline',
+            closeOnContentClick: true,
+            mainClass: 'mfp-fade',
+            midClick: true
+        });
     },
 
     //ClientSlider

@@ -72,7 +72,7 @@
                             <a href="#education" class="nav-link">Experience</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#work" class="nav-link">Work</a>
+                            <a href="#work" class="nav-link">Portfolio</a>
                         </li>
                         <!--
                         <li class="nav-item">
@@ -590,10 +590,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center text-white">
-                            <h1>Do you have an interesting oportunity</h1>
-                            <h4>and thinks I'm good fit?</h4>
+                            <h1>Do you have an interesting opportunity?</h1>
+                            <h4>Let's talk!</h4>
                             <div class="mt-4">
-                                <a href="#" class="btn btn-outline-custom">Request my CV</a>
+                                <a href="#contact" class="btn btn-outline-custom">Contact me</a>
                             </div>
                         </div>
                     </div>
@@ -602,17 +602,17 @@
         </section>
         <!-- END CTA -->
 
-        <!--START WORK -->   
+        <!--START WORK -->
         <section class="section text-center" id="work">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="text-center mx-auto section-main-title">
-                            <h2>Our <span class="font-weight-bold">Work</span></h2>
+                            <h2> <span class="font-weight-bold">Portfolio</span></h2>
                             <div class="main-title-border">
                                 <i class="mdi mdi-asterisk"></i>
                             </div>
-                            <p class="text-muted mx-auto mt-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <p class="text-muted mx-auto mt-2"> See previous projects I was part of</p>
                         </div>
                     </div>
                 </div>
@@ -620,82 +620,137 @@
                     <div class="col-lg-12">
                         <ul class="text-center list-unstyled list-inline mb-0 text-capitlize work_menu" id="menu-filter">
                             <li class="list-inline-item"><a class="active" data-filter="*">All</a></li>
-                            <li class="list-inline-item"><a class="" data-filter=".seo">Seo</a></li>
-                            <li class="list-inline-item"><a class="" data-filter=".webdesign">Webdesign</a></li>
-                            <li class="list-inline-item"><a class="" data-filter=".work">Work</a></li>
-                            <li class="list-inline-item"><a class="" data-filter=".wordpress">Wordpress</a></li>
+                            <li class="list-inline-item"><a class="" data-filter=".opensource">Open Source</a></li>
+                            <li class="list-inline-item"><a class="" data-filter=".web">Web</a></li>
+                            <li class="list-inline-item"><a class="" data-filter=".apps">Apps</a></li>
+                            <li class="list-inline-item"><a class="" data-filter=".backend">Backend</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row mt-5 work-filter">
-                    <div class="col-lg-4 webdesign wordpress">
+                    <div class="col-lg-4 apps backend">
                         <div class="work_img_box rounded">
-                            <a class="img-zoom" href="images/works/1.jpg"></a>
+                            <a href="#jnc-popup" class="open-popup-link"></a>
                             <div class="work_images">
-                                <img src="images/works/1.jpg" alt="image" class="img-fluid mx-auto d-block">
-                                <div class="work_overlay">
-                                    <h4 class="mb-0">UI Elements, Icons</h4>
-                                    <h6 class="mb-0">Studio &amp; Art</h6>
+                                <img src="images/works/jnc.png" alt="image" class="img-fluid mx-auto d-block">
+
+                            </div>
+                            <div id="jnc-popup" class="white-popup mfp-hide">
+                                <img src="images/works/jnc.png" alt="" class="img-fluid mx-auto d-block">
+                                <div class="caption">
+                                    <p> 'Joventut Nacionalista de Catalunya' is the first youth political organization in the country. Founded in 1980, working for a just and noble cause, freedom of Catalonia and its people. <br>
+                                        I collaborated on an iOS app that displayed all the information about the organization: News, agenda, ideas and direct contact with the people in it. <br>
+                                        More precisely I made the backend part of the app:
+                                        <ul>
+                                            <li> Ruby on Rails </li>
+                                            <li> Admin panel to send notifications to the users </li>
+                                            <li> REST Api to enable all the endpoints for the ios client </li>
+                                            <li> The notifications system itself using Amazon web services and SNS </li>
+                                        </ul>
+                                    </p>
+                                    <a href="https://bitbucket.org/antar88/jnc/src/master/" class="btn btn-primary mx-auto d-block" role="button">Code</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 seo webdesign">
+                    <div class="col-lg-4 apps web backend">
                         <div class="work_img_box rounded">
-                            <a class="img-zoom" href="images/works/2.jpg"></a>
+                            <a href="#argos-popup" class="open-popup-link"></a>
                             <div class="work_images">
-                                <img src="images/works/2.jpg" alt="image" class="img-fluid mx-auto d-block">
-                                <div class="work_overlay">
-                                    <h4>Illustrations</h4>
-                                    <h6>Creative &amp; Art</h6>
+                                <img src="images/works/argos.png" alt="image" class="img-fluid mx-auto d-block">
+                            </div>
+                            <div id="argos-popup" class="white-popup mfp-hide">
+                                <img src="images/works/argos.png" alt="" class="img-fluid mx-auto d-block">
+                                <div class="caption">
+                                    <p> I collaborated on a pioneer smart city project to detect in real time the state of a public parking. <br>
+                                        This project was the first one of his own, allowing the public agents knowing the cars that exceed parking time. <br>
+                                        My contributions of the project were:
+                                    <ul>
+                                        <li> PHP + Symfony as main tech stack </li>
+                                        <li> Backend of the app: database to store all the events, admin panel and RESTFul API </li>
+                                        <li> Frontend of the webapp, using technologies such Bootstrap, Symphony 2, Jquery, etc. </li>
+                                        <li> Support endpoint for the iOS app to allow public agents to access more easily the information that they need </li>
+                                    </ul>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <a href="https://bitbucket.org/antar88/argos" class="btn btn-primary col-lg m-1" role="button"> Code </a>
+                                            <a href="http://www.diaridegirona.cat/comarques/2013/10/12/vidreres-implantara-mes-sistema-daparcament/638784.html" class="btn btn-primary col-lg m-1" role="button"> Local News </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 work">
+                    <div class="col-lg-4 web">
                         <div class="work_img_box rounded">
-                            <a class="img-zoom" href="images/works/3.jpg"></a>
+                            <a href="#legacyweb-popup" class="open-popup-link"></a>
                             <div class="work_images">
-                                <img src="images/works/3.jpg" alt="image" class="img-fluid mx-auto d-block">
-                                <div class="work_overlay">
-                                    <h4>Media, Icons</h4>
-                                    <h6>Open Imagination</h6>
+                                <img src="images/works/web.png" alt="image" class="img-fluid mx-auto d-block">
+                            </div>
+                            <div id="legacyweb-popup" class="white-popup mfp-hide">
+                                <img src="images/works/web.png" alt="" class="img-fluid mx-auto d-block">
+                                <div class="caption">
+                                    <p> Using the standard basic technologies (CSS, JS, HTML, etc.) and with the help of boostrap, JQuery, some JS libraries and a HTML template I did my old personal web page!
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <a href="../legacy/index.html" class="btn btn-primary col-lg m-1" role="button"> See the legacy personal page </a>
+                                            <a href="https://github.com/antar88/antar88.github.io" class="btn btn-primary col-lg m-1" role="button"> Code </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 seo webdesign">
+                    <div class="col-lg-4 web backend opensource">
                         <div class="work_img_box rounded">
-                            <a class="img-zoom" href="images/works/4.jpg"></a>
+                            <a href="#itsat-popup" class="open-popup-link"></a>
                             <div class="work_images">
-                                <img src="images/works/4.jpg" alt="image" class="img-fluid mx-auto d-block">
-                                <div class="work_overlay">
-                                    <h4>Graphics, UI Elements</h4>
-                                    <h6>Locked Steel Gate</h6>
+                                <img src="images/works/it-sat.png" alt="image" class="img-fluid mx-auto d-block">
+                            </div>
+                            <div id="itsat-popup" class="white-popup mfp-hide">
+                                <img src="images/works/it-sat.png" alt="" class="img-fluid mx-auto d-block">
+                                <div class="caption">
+                                    <p> Web app tool for easily deploy and manage changes on multiple machines. <br>
+                                        I worked on an open source solution for the management and deploy of multiple hosts (servers and clients) on the same infrastructure. <br>
+                                        The objective was to make a tool to easily deploy changes in multiple machines with a web App tool.
+                                    <ul>
+                                        <li> Implementation of version control with git </li>
+                                        <li> Added some standards: until then only coded via vim in a server machine </li>
+                                        <li> Open source project  </li>
+                                    </ul>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <a href="http://sourceforge.net/p/itsat/code/ci/1867dc3282491bc82022dd657eb3444515436f08/tree/" class="btn btn-primary col-lg" role="button"> Code </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 seo work">
+                    <div class="col-lg-4 app backend">
                         <div class="work_img_box rounded">
-                            <a class="img-zoom" href="images/works/5.jpg"></a>
+                            <a href="#popkorn-popup" class="open-popup-link"></a>
                             <div class="work_images">
-                                <img src="images/works/5.jpg" alt="image" class="img-fluid mx-auto d-block">
-                                <div class="work_overlay">
-                                    <h4>Illustrations, Graphics</h4>
-                                    <h6>Mac Sunglasses</h6>
-                                </div>
+                                <img src="images/works/popkorn.png" alt="image" class="img-fluid mx-auto d-block">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wordpress">
-                        <div class="work_img_box rounded">
-                            <a class="img-zoom" href="images/works/6.jpg"></a>
-                            <div class="work_images">
-                                <img src="images/works/6.jpg" alt="image" class="img-fluid mx-auto d-block">
-                                <div class="work_overlay">
-                                    <h4>UI Elements, Media</h4>
-                                    <h6>Backpack Contents</h6>
+                            <div id="popkorn-popup" class="white-popup mfp-hide">
+                                <img src="images/works/popkorn.png" alt="" class="img-fluid mx-auto d-block">
+                                <div class="caption">
+                                    <p>
+                                        PopKorn is the perfect companion for people who love TV shows. It is a great tool to find shows, as it has a database of over 2000 American, British and Spanish shows. <br>
+                                        You can search through them either alphabetically or you can have them sorted by genre. You can also very easily check out a certain show's plot, season and episode list, etc.<br>
+                                        Some reviews:
+                                    </p>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <a href="http://musiczine.es/otros/tecnologia/4661-aplicaciones-para-cine-y-series" class="btn btn-primary col-lg m-1" role="button"> musiczine</a>
+                                            <a href="http://www.todoiphone.net/popkorn-de-undeadcoders-te-mantiene-al-dia-con-las-series/" class="btn btn-primary col-lg m-1" role="button"> todo iphone</a>
+                                            <a href="http://www.alertasiphone.com/noticias/ii-aniversario-sorteamos-5-promo-codes-de-la-aplicacion-popkorn/" class="btn btn-primary col-lg m-1" role="button"> alertas iphone</a>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <a href="https://bitbucket.org/antar88/popkorn" class="btn btn-primary col-lg" role="button"> Code </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -704,7 +759,6 @@
             </div>
         </section>
         <!--END WORK -->
-
 
         <!-- START CLIENT -->
         <!--
