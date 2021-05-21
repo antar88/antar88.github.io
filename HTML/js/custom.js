@@ -61,7 +61,17 @@
             if (a == 0 && $(window).scrollTop() > oTop) {
                 $('.lan_fun_value').each(function() {
                     var $this = $(this),
-                        countTo = $this.attr('data-count');
+                        countTo = $this.attr('data-count'),
+                        delta = Math.abs(Date.now() - Date.parse("2012-06-01")) / 1000;
+                    if (countTo == "hours_until_now") {
+                        countTo = Math.floor(delta / 3600);
+                    }
+                    else if (countTo == "days_until_now") {
+                        countTo = Math.floor(delta / 86400);
+                    }
+                    else if (countTo == "years_until_now") {
+                        countTo = Math.floor(delta / 31536000);
+                    }
                     $({
                         countNum: $this.text()
                     }).animate({
