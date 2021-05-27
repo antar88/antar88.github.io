@@ -16,13 +16,13 @@ $('#working_form').submit(function() {
                 comments: $('#comments').val(),
             },
             function(data) {
-                document.getElementById('message').innerHTML = data;
+                document.getElementById('message').innerHTML = data.message;
                 $('#message').slideDown('slow');
                 $('#cform img.gif_loader').fadeOut('slow', function() {
                     $(this).remove()
                 });
                 $('#submit').removeAttr('disabled');
-                if (data.match('success') != null) $('#cform').slideUp('slow');
+                if ('success'.match(data.result) != null) $('#cform').slideUp('slow');
             }
         );
 
