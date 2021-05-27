@@ -78,10 +78,9 @@ if(mail($address, $e_subject, $msg, $headers)) {
 	echo "</fieldset>";
 
 } else {
-    print("address: " + $address);
-    print("subject: " + $e_subject);
-    print("body: " + $msg);
-    print("headers: " + $headers);
-	echo 'ERROR!';
-
+    echo "address: " . $address;
+    echo "subject: " . $e_subject;
+    echo "body: " . $msg;
+    echo "headers: " . $headers;
+    exit(1);
 }
