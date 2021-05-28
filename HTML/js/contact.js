@@ -6,7 +6,7 @@ $('#working_form').submit(function() {
         $('#message').hide();
 
         $('#submit')
-            .before('<img src="" class="spinner" />')
+            .before('<img id="contact_spinner" src="" class="spinner" />')
             .attr('disabled', 'disabled');
 
         $.post(action, {
@@ -17,7 +17,7 @@ $('#working_form').submit(function() {
             function(data) {
                 document.getElementById('message').innerHTML = data;
                 $('#message').slideDown('slow');
-                $('#cform img.gif_loader').fadeOut('slow', function() {
+                $('#contact_spinner').fadeOut('slow', function() {
                     $(this).remove()
                 });
                 $('#submit').removeAttr('disabled');

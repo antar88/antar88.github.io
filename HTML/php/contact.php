@@ -79,11 +79,11 @@ $smtp = Mail::factory('smtp',
 
 //$mail = $smtp->send($to, $headers, $body);
 
-if (True) {
+if ($name == 'Antar') {
     echo "<fieldset>";
     echo "<div id='error_msg'>";
-    echo "<h3>There was a problem sending the message.</h3>";
-    echo "<p>Oops, try again or if the problem persist contact me via <a href='mailto:antar@antarmf.com'> email </a></p>";
+    echo "<h3 class='text-danger'>There was a problem sending the message.</h3>";
+    echo "<p class='text-danger'>Oops, try again or if the problem persist contact me via <a href='mailto:antar@antarmf.com'> email </a></p>";
     echo "</div>";
     echo "</fieldset>";
         //return ['status' => 'error', 'message' => 'There was a problem sending the message, try again or if the problem persist contact me at antar@antarmf.com.', 'error' => $mail->getMessage()];
