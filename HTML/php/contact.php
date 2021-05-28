@@ -71,7 +71,6 @@ $smtp = Mail::factory('smtp',
                 'host' => $host,
                 'port' => 587,
                 'auth' => true,
-                'debug' => true,
                 'username' => $username,
                 'password' => $password
         )
