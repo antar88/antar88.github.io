@@ -4,11 +4,14 @@ $('#working_form').submit(function() {
     var action = $(this).attr('action');
 
     $("#message").slideUp(750, function() {
-        $('#message').hide();
-
-        $('#submit')
-            .before('<img src="" class="gif_loader" />')
-            .attr('disabled', 'disabled');
+        $('#submit').attr('disabled', 'disabled');
+        $('#submit').attr('disabled', 'disabled');
+        $('#contact_form_container').remove();
+        $('#social_form').after(`
+            <div class="col-lg-8 d-flex align-items-center">
+                <div id="form_spinner" class="align-middle spinner"></div>
+                <div id="contact_message"></div>
+            </div>`)
 
         $.post(action, {
                 name: $('#name').val(),
@@ -16,12 +19,12 @@ $('#working_form').submit(function() {
                 comments: $('#comments').val(),
             },
             function(data) {
-                document.getElementById('message').innerHTML = data.message;
+                $('#contact_message').innerHTML = data;
                 $('#message').slideDown('slow');
-                $('#cform img.gif_loader').fadeOut('slow', function() {
+                $('#form_spinner').fadeOut('slow', function() {
                     $(this).remove()
                 });
-                $('#submit').removeAttr('disabled');
+
                 if ('success'.match(data.result) != null) $('#cform').slideUp('slow');
             }
         );

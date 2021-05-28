@@ -1011,7 +1011,7 @@
                     </div>
                 </div>  
                 <div class="row mt-4 pt-4">
-                    <div class="col-lg-4">
+                    <div id="social_form" class="col-lg-4">
                         <div class="text-center mt-4">
                             <div>
                                 <i class="mdi mdi-linkedin text-custom h2"></i>
@@ -1039,9 +1039,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
+                    <div id="contact_form_container" class="col-lg-8">
                         <div class="contact_form">
-                            <div id="message"></div>
                             <form method="post" action="php/contact.php" name="contact-form" id="working_form">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -1074,7 +1073,6 @@
                                 <div class="row">
                                     <div class="col-sm-12 text-right">
                                         <input type="submit" id="submit" name="send" class="submitBnt btn btn-custom" value="Send Message">
-                                        <div id="simple-msg"></div>
                                     </div>
                                 </div>
                             </form>

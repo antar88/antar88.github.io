@@ -164,6 +164,9 @@ button:focus {
     display: block;
 }
 
+.hidden {
+    visibility: hidden;
+}
 
 /*==========================
         2.HELPER
