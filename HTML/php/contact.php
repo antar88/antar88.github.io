@@ -77,12 +77,11 @@ $smtp = Mail::factory('smtp',
         )
 );
 
-//$mail = $smtp->send($to, $headers, $body);
+$mail = $smtp->send($to, $headers, $body);
 
-if ($name == 'Antar') {
+if (PEAR::isError($mail)) {
     print_err("<h3 class='text-danger'>There was a problem sending the message.</h3><p class='text-danger'>Oops, try again or if the problem persist contact me via <a href='mailto:antar@antarmf.com'> email </a></p>");
 } else {
-
     $output = [
         'result' => 'success',
         'html' => "<div id='success_msg'><h3>Email Sent Successfully.</h3><p>Thank <strong>" . $name . "</strong> for contacting me, I'll come back to you soon.</p></div>"

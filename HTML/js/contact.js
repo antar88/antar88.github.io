@@ -27,7 +27,7 @@ $('#working_form').submit(function() {
                     $('#working_form').slideUp('slow');
                 }
                 else {
-                    $('#submit').removeAttr('disabled');
+                    $('#submit').attr('value', 'Try again').removeAttr('disabled');
                 }
             }
         );
