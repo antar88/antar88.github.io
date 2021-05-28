@@ -51,14 +51,20 @@ $e_reply = "You can contact $name via email, $email";
 $body = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
 require_once "Mail.php";
+if (!file_exists("./contact.json") {
+    echo echo '<div class="error_msg">Internal server error. Please contact me via <a href='mailto:antar@antarmf.com'> email </a></div>';
+    exit();
+}
 
-$from = "Antar <antar@antarmf.com>";
-$to = "Antar <antar88@gmail.com>";
-$host = "mail.privateemail.com";
-$username = "antar@antarmf.com";
-$password = "T5q5e54Bnamecheap";
+$conf = file_get_contents(getcwd ( ) ."/contact.json");
+$conf = json_decode($conf, true);
+
+$from = $conf["from"];
+$to = $conf["to"];
+$host = $conf["host"];
+$username = $conf["username"];
+$password = $password["from"];
 $headers = array ('From' => $from, 'To' => $to, 'Subject' => $subject);
-
 $smtp = Mail::factory('smtp',
         array (
                 'host' => $host,
