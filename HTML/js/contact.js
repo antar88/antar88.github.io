@@ -7,7 +7,8 @@ $('#working_form').submit(function() {
 
         $('#submit')
             .before('<img id="contact_spinner" src="" class="spinner" />')
-            .attr('disabled', 'disabled');
+            .attr('disabled', 'disabled')
+            .attr('value', 'Sending...');
 
         $.post(action, {
                 name: $('#name').val(),
@@ -20,8 +21,13 @@ $('#working_form').submit(function() {
                 $('#contact_spinner').fadeOut('slow', function() {
                     $(this).remove()
                 });
-                $('#submit').removeAttr('disabled');
-                if ('success'.match(data.result) != null) $('#cform').slideUp('slow');
+
+                if ('success'.match(data.result) != null) {
+                    $('#working_form').slideUp('slow');
+                }
+                else {
+                    $('#submit').removeAttr('disabled');
+                }
             }
         );
 
