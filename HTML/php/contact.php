@@ -52,11 +52,11 @@ $body = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
 require_once "Mail.php";
 
-$from = "Antar <antar@antarmf.com>";
-$to = "Antar <antar88@gmail.com>";
-$host = "mail.privateemail.com";
-$username = "antar@antarmf.com";
-$password = "T5q5e54Bnamecheap";
+$from = "---";
+$to = "---";
+$host = "---";
+$username = "---";
+$password = "---";
 $headers = array ('From' => $from, 'To' => $to, 'Subject' => $subject);
 
 $smtp = Mail::factory('smtp',
