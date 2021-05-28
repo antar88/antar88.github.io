@@ -64,7 +64,7 @@ $from = $conf["from"];
 $to = $conf["to"];
 $host = $conf["host"];
 $username = $conf["username"];
-$password = $password["from"];
+$password = $conf["password"];
 $headers = array ('From' => $from, 'To' => $to, 'Subject' => $subject);
 $smtp = Mail::factory('smtp',
         array (
