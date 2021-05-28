@@ -14,20 +14,21 @@ $name     = $_POST['name'];
 $email    = $_POST['email'];
 $comments = $_POST['comments'];
 
-if(trim($name) == '') {
-	echo '<div class="error_msg">You must enter your name.</div>';
-	exit();
-} else if(trim($email) == '') {
-	echo '<div class="error_msg">Please enter a valid email address.</div>';
-	exit();
-} else if(!isEmail($email)) {
-	echo '<div class="error_msg">You have entered an invalid e-mail address. Please try again.</div>';
-	exit();
+function print_err ($msg) {
+    $err = ['result' => 'error', 'html' => '<div class="error_msg">' . $msg . '</div>'];
+    echo json_encode($err);
+    exit();
 }
 
+if(trim($name) == '') {
+	print_err('You must enter your name.');
+} else if(trim($email) == '') {
+	print_err('Please enter a valid email address.');
+} else if(!isEmail($email)) {
+	print_err('You have entered an invalid e-mail address. Please try again.');
+}
 if(trim($comments) == '') {
-	echo '<div class="error_msg">Please enter your message.</div>';
-	exit();
+	print_err('Please enter your message.');
 }
 
 if(get_magic_quotes_gpc()) {
@@ -53,8 +54,7 @@ $body = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
 require_once "Mail.php";
 if (!file_exists("./contact.json")) {
-    echo '<div class="error_msg">Internal server error. Please contact me via <a href="mailto:antar@antarmf.com"> email </a></div>';
-    exit();
+    print_err('Internal server error. Please contact me via <a href="mailto:antar@antarmf.com"> email </a>');
 }
 
 $conf = file_get_contents(getcwd ( ) ."/contact.json");
@@ -80,19 +80,12 @@ $smtp = Mail::factory('smtp',
 //$mail = $smtp->send($to, $headers, $body);
 
 if ($name == 'Antar') {
-    echo "<fieldset>";
-    echo "<div id='error_msg'>";
-    echo "<h3 class='text-danger'>There was a problem sending the message.</h3>";
-    echo "<p class='text-danger'>Oops, try again or if the problem persist contact me via <a href='mailto:antar@antarmf.com'> email </a></p>";
-    echo "</div>";
-    echo "</fieldset>";
-        //return ['status' => 'error', 'message' => 'There was a problem sending the message, try again or if the problem persist contact me at antar@antarmf.com.', 'error' => $mail->getMessage()];
+    print_err("<h3 class='text-danger'>There was a problem sending the message.</h3><p class='text-danger'>Oops, try again or if the problem persist contact me via <a href='mailto:antar@antarmf.com'> email </a></p>");
 } else {
-        //return ['status' => 'error', 'message' => $mail->getMessage()];
-    echo "<fieldset>";
-    echo "<div id='success_msg'>";
-    echo "<h3>Email Sent Successfully.</h3>";
-    echo "<p>Thank <strong>$name</strong> for contacting me, I'll come back to you soon.</p>";
-    echo "</div>";
-    echo "</fieldset>";
+
+    $output = [
+        'result' => 'success',
+        'html' => "<div id='success_msg'><h3>Email Sent Successfully.</h3><p>Thank <strong>" . $name . "</strong> for contacting me, I'll come back to you soon.</p></div>"
+    ];
+    echo json_encode($output);
 }

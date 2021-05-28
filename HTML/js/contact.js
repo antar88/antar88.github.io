@@ -16,7 +16,8 @@ $('#working_form').submit(function() {
                 comments: $('#comments').val(),
             },
             function(data) {
-                document.getElementById('message').innerHTML = data;
+                data = JSON.parse(data);
+                document.getElementById('message').innerHTML = data.html;
                 $('#message').slideDown('slow');
                 $('#contact_spinner').fadeOut('slow', function() {
                     $(this).remove()
