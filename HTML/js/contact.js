@@ -5,19 +5,18 @@ $('#working_form').submit(function() {
 
     $("#message").slideUp(750, function() {
         $('#submit').attr('disabled', 'disabled');
-        $('#submit').attr('disabled', 'disabled');
-        $('#contact_form_container').remove();
+
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var comments = $('#comments').val();
+        //$('#contact_form_container').remove();
         $('#social_form').after(`
             <div class="col-lg-8 d-flex align-items-center">
                 <div id="form_spinner" class="align-middle spinner"></div>
                 <div id="contact_message"></div>
             </div>`)
 
-        $.post(action, {
-                name: $('#name').val(),
-                email: $('#email').val(),
-                comments: $('#comments').val(),
-            },
+        $.post(action, {name: name, email: email, comments: comments},
             function(data) {
                 $('#contact_message').innerHTML = data;
                 $('#message').slideDown('slow');
