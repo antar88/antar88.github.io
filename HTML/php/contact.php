@@ -65,7 +65,14 @@ $to = $conf["to"];
 $host = $conf["host"];
 $username = $conf["username"];
 $password = $conf["password"];
-$headers = array ('From' => $from, 'To' => $to, 'Subject' => $subject);
+$headers = [
+    'From' => $from,
+    'To' => $to,
+    'Subject' => $subject,
+    'MIME-Version' => '1.0',
+    'Content-type' => 'text/plain; charset=utf-8',
+    'Content-Transfer-Encoding' => 'quoted-printable'
+];
 $smtp = Mail::factory('smtp',
         array (
                 'host' => $host,
