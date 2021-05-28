@@ -1,4 +1,5 @@
 <?php
+if(!$_POST) $_POST = json_decode(file_get_contents("php://input"), true);
 
 if(!$_POST) exit;
 
@@ -51,8 +52,8 @@ $e_reply = "You can contact $name via email, $email";
 $body = wordwrap( $e_body . $e_content . $e_reply, 70 );
 
 require_once "Mail.php";
-if (!file_exists("./contact.json") {
-    echo echo '<div class="error_msg">Internal server error. Please contact me via <a href='mailto:antar@antarmf.com'> email </a></div>';
+if (!file_exists("./contact.json")) {
+    echo '<div class="error_msg">Internal server error. Please contact me via <a href="mailto:antar@antarmf.com"> email </a></div>';
     exit();
 }
 
