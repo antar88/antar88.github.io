@@ -1,6 +1,6 @@
 /*
 ------------------------------------------------------------------------
-* Template Name    : Elvish | Responsive Bootstrap 4 Personal Template * 
+* Template Name    : Elvish | Responsive Bootstrap 4 Personal Template *
 * Author           : ThemesBoss                                        *
 * Version          : 1.0.0                                             *
 * Created          : May 2018                                          *
@@ -72,6 +72,14 @@
                     else if (countTo == "years_until_now") {
                         countTo = Math.floor(delta / 31536000);
                     }
+                    else if (countTo == "avg_stay") {
+                        var delta_king = Math.abs(Date.now() - Date.parse("2018-12-01")) / 1000;
+                        var delta_sp = Math.abs(Date.parse("2018-11-30") - Date.parse("2013-03-01")) / 1000;
+                        var delta_everis = Math.abs(Date.parse("2013-02-01") - Date.parse("2012-06-01")) / 1000;
+
+                        var delta_avg = (delta_everis + delta_sp + delta_king) / 3;
+                        countTo = Math.floor( delta_avg / 2592000);
+                    }
                     $({
                         countNum: $this.text()
                     }).animate({
@@ -93,6 +101,8 @@
                 a = 1;
             }
         });
+
+        $('.fun_tooltip').tooltip();
     },
 
     //Portfolio Filter
@@ -190,7 +200,7 @@
             } else {
                 $('.back_top').fadeOut();
             }
-        }); 
+        });
         $('.back_top').click(function(){
             $("html, body").animate({ scrollTop: 0 }, 1000);
             return false;
@@ -207,7 +217,7 @@
                 backDelay: 3000
             });
         });
-    },  
+    },
 
     ElvishApp.prototype.init = function() {
         this.initPreLoader();
