@@ -105,6 +105,17 @@
         $('.fun_tooltip').tooltip();
     },
 
+    // Experience
+    ElvishApp.prototype.initExperience = function() {
+        $(window).on('load', function () {
+            var current_job_delta = Math.abs(Date.now() - Date.parse("2021-03-01")) / 1000;
+            var current_job_months = Math.floor(current_job_delta / 2592000) % 12;
+            var current_job_years = Math.floor(current_job_delta / 31536000);
+            var current_job_text = current_job_years == 0 ? " (".concat(current_job_months, " months)") : " (".concat(current_job_years, " years and ", current_job_months, " months)")
+            $('#current_stay').text(current_job_text);
+        });
+    }
+
     //Portfolio Filter
     ElvishApp.prototype.initPortfolioFilter = function() {
         $(window).on('load', function () {
@@ -225,6 +236,7 @@
         this.initNavbarSmooth();
         this.initNavbarScrollSpy();
         this.initFunFacts();
+        this.initExperience();
         this.initPortfolioFilter();
         this.initMfpImages();
         this.initClientSlider();
