@@ -218,6 +218,16 @@
         });
     },
 
+    ElvishApp.prototype.initGoToContact = function() {
+      $('.navbar-nav a, .scroll_contacts a').on('click', function(event) {
+          var $anchor = $(this);
+          $('html, body').stop().animate({
+              scrollTop: $($anchor.attr('href')).offset().top - 0
+          }, 1500, 'easeInOutExpo');
+          event.preventDefault();
+      });
+    },
+
     //Typed Text
     ElvishApp.prototype.initTypedText = function() {
         $(".element").each(function() {
@@ -242,6 +252,7 @@
         this.initClientSlider();
         this.initMfpVideo();
         this.initBackToTop();
+        this.initGoToContact();
         this.initTypedText();
     },
 
