@@ -1,0 +1,6 @@
+[submodule "casament"]
+	path = casament
+	url = git@github.com:antar88/casament.git
+[submodule "HTML/casament"]
+	path = HTML/casament
+	url = git@github.com:antar88/casament.git
